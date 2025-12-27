@@ -5,7 +5,8 @@
 LeanBuild AI is a comprehensive lean construction management platform that helps construction teams identify, track, and eliminate the 8 wastes (DOWNTIME) while implementing continuous improvement methodologies. The platform combines AI-powered analytics with proven lean construction techniques including Last Planner System, 5S, Kaizen, and Value Stream Mapping.
 
 **Primary Goals:**
-- Reduce construction waste by 30-50% through data-driven insights
+
+- Reduce construction waste by 20-50% through data-driven insights
 - Improve project delivery times using Last Planner System
 - Enable continuous improvement culture through Kaizen events
 - Provide real-time AI analysis using multiple AI providers
@@ -19,6 +20,7 @@ LeanBuild AI is a comprehensive lean construction management platform that helps
 #### Implemented Features:
 
 **1. Email & Notification System**
+
 - ✅ Notification settings management (email, Slack, Teams)
 - ✅ Notification logging with status tracking
 - ✅ Scheduled reports configuration
@@ -28,12 +30,14 @@ LeanBuild AI is a comprehensive lean construction management platform that helps
 - ✅ Weekly performance reports (automated)
 
 **2. Calendar & Scheduling**
+
 - ✅ Calendar events API (CRUD operations)
 - ✅ Event types: tasks, milestones, kaizen, 5S assessments, meetings
 - ✅ Project-based filtering
 - ✅ External calendar sync ready (Google Calendar integration available)
 
 **3. Last Planner Tasks**
+
 - ✅ Task management API with full CRUD
 - ✅ Status workflow: planned → committed → in_progress → completed/blocked
 - ✅ Assignee tracking with team member linkage
@@ -41,6 +45,7 @@ LeanBuild AI is a comprehensive lean construction management platform that helps
 - ✅ Milestone association
 
 **4. Kaizen Events**
+
 - ✅ Kaizen event management API
 - ✅ Problem statement → Root cause → Solution workflow
 - ✅ Before/after metrics tracking (JSONB)
@@ -48,6 +53,7 @@ LeanBuild AI is a comprehensive lean construction management platform that helps
 - ✅ Status tracking: proposed → approved → in_progress → completed
 
 **5. Subcontractor Management**
+
 - ✅ Full subcontractor CRUD
 - ✅ Compliance status tracking (pending/compliant/non-compliant)
 - ✅ Insurance expiry monitoring
@@ -56,6 +62,7 @@ LeanBuild AI is a comprehensive lean construction management platform that helps
 - ✅ Waste incident attribution per subcontractor
 
 **6. Integrations Hub** (`/dashboard/integrations`)
+
 - ✅ Integration overview with all available services
 - ✅ Notification channel configuration (Email, Slack, Teams)
 - ✅ Scheduled report management
@@ -63,6 +70,7 @@ LeanBuild AI is a comprehensive lean construction management platform that helps
 - ✅ OAuth connection flow ready
 
 **7. Background Jobs (Inngest)**
+
 - ✅ Weekly performance report cron (Mondays 9 AM)
 - ✅ Task deadline reminder cron (Daily 8 AM)
 - ✅ Waste incident alert trigger (event-based)
@@ -72,30 +80,31 @@ LeanBuild AI is a comprehensive lean construction management platform that helps
 ## AI Integration
 
 ### Configured API Keys (Environment Variables)
+
 - `API_KEY_GEMINIAI` - Google Gemini API key
-- `API_KEY_OPENAI` - OpenAI API key  
+- `API_KEY_OPENAI` - OpenAI API key
 - `API_KEY_OPENROUTER` - OpenRouter API key
 
 ### AI Providers & Models
 
-| Provider | Fast (Low) | Balanced (Medium) | Advanced (High) |
-|----------|------------|-------------------|-----------------|
-| **Google Gemini** | Gemini 2.0 Flash | Gemini 2.5 Flash | Gemini 2.5 Pro |
-| **OpenAI** | GPT-4o Mini | GPT-4o | o1-preview |
-| **OpenRouter** | Gemini 2.0 Flash (Free) | Gemini 2.5 Flash | Claude Sonnet 4 |
+| Provider          | Fast (Low)              | Balanced (Medium) | Advanced (High) |
+| ----------------- | ----------------------- | ----------------- | --------------- |
+| **Google Gemini** | Gemini 2.0 Flash        | Gemini 2.5 Flash  | Gemini 2.5 Pro  |
+| **OpenAI**        | GPT-4o Mini             | GPT-4o            | o1-preview      |
+| **OpenRouter**    | Gemini 2.0 Flash (Free) | Gemini 2.5 Flash  | Claude Sonnet 4 |
 
 ---
 
 ## 📊 Available Integrations
 
-| Integration | Status | Features |
-|-------------|--------|----------|
-| **Gmail / Google Workspace** | 🟡 Available | Email notifications, reports |
-| **Microsoft Outlook** | 🟡 Available | Email, calendar sync |
-| **Google Calendar** | 🟡 Available | Task sync, milestone tracking |
-| **Slack** | 🟡 Available | Real-time alerts, standup summaries |
-| **Microsoft Teams** | 🟡 Available | Notifications, collaboration |
-| **Twilio SendGrid** | 🟡 Available | Bulk email, transactional |
+| Integration                  | Status       | Features                            |
+| ---------------------------- | ------------ | ----------------------------------- |
+| **Gmail / Google Workspace** | 🟡 Available | Email notifications, reports        |
+| **Microsoft Outlook**        | 🟡 Available | Email, calendar sync                |
+| **Google Calendar**          | 🟡 Available | Task sync, milestone tracking       |
+| **Slack**                    | 🟡 Available | Real-time alerts, standup summaries |
+| **Microsoft Teams**          | 🟡 Available | Notifications, collaboration        |
+| **Twilio SendGrid**          | 🟡 Available | Bulk email, transactional           |
 
 ---
 
@@ -126,53 +135,54 @@ audit_trail               -- Change tracking
 
 ## New API Endpoints
 
-| Endpoint | Methods | Description |
-|----------|---------|-------------|
-| `/api/notifications` | GET, POST, DELETE | Notification settings & scheduled reports |
-| `/api/send-notification` | POST | Send email/Slack/Teams notifications |
-| `/api/calendar` | GET, POST, PUT, DELETE | Calendar event management |
-| `/api/tasks` | GET, POST, PUT, DELETE | Last Planner task management |
-| `/api/kaizen` | GET, POST, PUT, DELETE | Kaizen event management |
-| `/api/subcontractors` | GET, POST, PUT, DELETE | Subcontractor management |
-| `/api/team` | GET, POST, PUT, DELETE | Team member management |
+| Endpoint                 | Methods                | Description                               |
+| ------------------------ | ---------------------- | ----------------------------------------- |
+| `/api/notifications`     | GET, POST, DELETE      | Notification settings & scheduled reports |
+| `/api/send-notification` | POST                   | Send email/Slack/Teams notifications      |
+| `/api/calendar`          | GET, POST, PUT, DELETE | Calendar event management                 |
+| `/api/tasks`             | GET, POST, PUT, DELETE | Last Planner task management              |
+| `/api/kaizen`            | GET, POST, PUT, DELETE | Kaizen event management                   |
+| `/api/subcontractors`    | GET, POST, PUT, DELETE | Subcontractor management                  |
+| `/api/team`              | GET, POST, PUT, DELETE | Team member management                    |
 
 ---
 
 ## Dashboard Routes
 
-| Module | Route | Status |
-|--------|-------|--------|
-| **Dashboard** | `/dashboard` | ✅ Working |
-| **Projects** | `/dashboard/projects` | ✅ Working |
+| Module              | Route                        | Status     |
+| ------------------- | ---------------------------- | ---------- |
+| **Dashboard**       | `/dashboard`                 | ✅ Working |
+| **Projects**        | `/dashboard/projects`        | ✅ Working |
 | **Waste Incidents** | `/dashboard/waste-incidents` | ✅ Working |
 | **Recommendations** | `/dashboard/recommendations` | ✅ Working |
-| **AI Assistant** | `/dashboard/ai-assistant` | ✅ Working |
-| **AI Analysis** | `/dashboard/ai-analysis` | ✅ Working |
-| **Value Stream** | `/dashboard/value-stream` | ✅ Working |
-| **Last Planner** | `/dashboard/last-planner` | ✅ Working |
-| **5S Assessments** | `/dashboard/5s-assessments` | ✅ Working |
-| **Kaizen** | `/dashboard/kaizen` | ✅ Working |
-| **Team** | `/dashboard/team` | ✅ Working |
-| **Subcontractors** | `/dashboard/subcontractors` | ✅ NEW |
-| **Reports** | `/dashboard/reports` | ✅ Working |
-| **Integrations** | `/dashboard/integrations` | ✅ NEW |
-| **Settings** | `/dashboard/settings` | ✅ Working |
+| **AI Assistant**    | `/dashboard/ai-assistant`    | ✅ Working |
+| **AI Analysis**     | `/dashboard/ai-analysis`     | ✅ Working |
+| **Value Stream**    | `/dashboard/value-stream`    | ✅ Working |
+| **Last Planner**    | `/dashboard/last-planner`    | ✅ Working |
+| **5S Assessments**  | `/dashboard/5s-assessments`  | ✅ Working |
+| **Kaizen**          | `/dashboard/kaizen`          | ✅ Working |
+| **Team**            | `/dashboard/team`            | ✅ Working |
+| **Subcontractors**  | `/dashboard/subcontractors`  | ✅ NEW     |
+| **Reports**         | `/dashboard/reports`         | ✅ Working |
+| **Integrations**    | `/dashboard/integrations`    | ✅ NEW     |
+| **Settings**        | `/dashboard/settings`        | ✅ Working |
 
 ---
 
 ## Background Jobs (Inngest)
 
-| Job | Schedule | Function |
-|-----|----------|----------|
-| Weekly Performance Report | Monday 9:00 AM | `weeklyReportCron` |
-| Task Deadline Reminder | Daily 8:00 AM | `taskReminderCron` |
-| Waste Incident Alert | Event-triggered | `wasteAlertTrigger` |
+| Job                       | Schedule        | Function            |
+| ------------------------- | --------------- | ------------------- |
+| Weekly Performance Report | Monday 9:00 AM  | `weeklyReportCron`  |
+| Task Deadline Reminder    | Daily 8:00 AM   | `taskReminderCron`  |
+| Waste Incident Alert      | Event-triggered | `wasteAlertTrigger` |
 
 ---
 
 ## Architecture
 
 ### Tech Stack
+
 - **Frontend**: Next.js 15 (App Router), React 18, TypeScript
 - **UI**: Shadcn/ui, Tailwind CSS, Lucide icons
 - **State**: React hooks, SWR for data fetching
@@ -223,9 +233,9 @@ src/
 
 ## User Roles
 
-| Role | Permissions |
-|------|-------------|
-| Admin | Full access, user management, system settings |
-| Project Manager | Project CRUD, team management, reports |
-| Field Engineer | Data entry, incident logging, view reports |
-| Viewer | Read-only access to dashboards and reports |
+| Role            | Permissions                                   |
+| --------------- | --------------------------------------------- |
+| Admin           | Full access, user management, system settings |
+| Project Manager | Project CRUD, team management, reports        |
+| Field Engineer  | Data entry, incident logging, view reports    |
+| Viewer          | Read-only access to dashboards and reports    |
